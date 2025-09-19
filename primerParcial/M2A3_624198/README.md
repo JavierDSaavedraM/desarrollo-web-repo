@@ -1,0 +1,2 @@
+En el archivo modifique el documento para que siguiera las reglas estandar y tuviera una mejor organización.
+Cambie los divs por un header, footer, centralice el contenido en un main y articulos y cambie los titulos para que utilizaran las tag de headers correctas.

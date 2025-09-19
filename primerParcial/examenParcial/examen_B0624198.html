@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Examen HTML5 - Javier Djorkaef Saavedra Mendiola</title>
+    <meta charset="UTF-8">
+    <!-- 624198--> 
+  </head>
+  <body>
+    <header>
+      <h1>Feria Universitaria de Innovación 2025</h1>
+      <p> <q>Mejorando el pasado, para tener un futuro</q></p>
+    <hr>
+      <nav> 
+        <a href="#">Inicio</a>
+        <a href="#Expositores">Expositores</a>
+        <a href ="#Registro">Registro</a>
+      </nav>
+    <hr>
+    </header>
+    <main>
+      <section id="Expositores">
+        <h2>Expositores </h2>
+        <ol>
+          <li> "Uso de Inteligencia artificial para comunicación con perros"  - Jose</li>
+          <li> "Modelo de predición en objetos mercado de Minecraft"  - Andrea</li>
+          <li> "Aplicación de LLM en heladerías"  - Pepe</li>
+          <li> "Desarollo de C+++" - Michael</li>
+        </ol>
+        <hr>
+      </section>
+
+      <section id ="Registro">
+        <h2>Expositores </h2>
+        <form method="get">
+          <label>Nombre: </label>
+          <input type="text" placeholder="Escribe tu Nombre" required> 
+          <br> <br>
+          <label>Matricula: </label>
+          <input type="number" maxlength=""> 
+          <br> <br>
+          <input type="checkbox" id="estudiante" name="registrotipos" value="estudiante"> 
+          <label for="estudiante">Estudiante</label>
+          <input type="checkbox" id="profesor" name="registrotipos" value="lol"> 
+          <label for="profesor">Profesor</label>
+          <input type="checkbox" id="visitante" name="registrotipos" value="visitante"> 
+          <label for="visitante">Visitante</label>
+          <br> <br>
+          <input type="submit" value="Enviar">
+        </form>
+        <br>
+      </section>
+      <hr>
+    </main>
+    <!-- 
+    Los patrocinadores al ser no parte del contenido principal
+    se pone en una sección aside en ves de una section dentro de main.  -->
+      <aside>
+        <h2> Patrocinadores</h2>
+        <br>
+        <ul>
+          <li> Coca-Cola</li>
+          <li>Tesla </li>
+          <li> META </li>
+        </ul>
+        <img src="Coca-Cola_logo.png" alt="Logo de Coca-Cola Patrocinador OFicial de esta feria" width="300"> 
+        <img src="Meta_Platforms_Inc._logo.png" alt="Logo de META AI Patrocinador OFicial de esta feria" height="120"> 
+        <img src="Tesla_T_symbol.png" alt="Logo de Tesla Inc. Patrocinador OFicial de esta feria" height="125"> 
+      </aside>
+
+      <hr>
+      <footer>
+        <p> Javier Djorkaef Saavedra Mendiola</p>
+        <p> Fecha: 12/09/2025</p>
+      </footer>
+  </body>
+</html>
+
+
+<!--  ¿Cuál es la diferencia entre <header> y <footer>?
+  El header es un tipo especial especial de etiqueta semantica que esta acomodado en la parte incial del documento. En esta parte se busca poner 
+  cosas como el titulo del articulo (h1) al igual que un menu de navegación del sitio 
+  Mientras que el footer busca ser la información de contacto y en algunas 
+  paginas igual funciona como una navegación. 
+
+  Pero el header va al inicio de la pagina y el footer al final
+
+2. ¿Por qué es recomendable usar etiquetas semánticas en lugar de <div> genéricos?
+  Esta mejor clasificado de esa manera, estas etiquetas aceguran que todo
+  este más estandarizado, puede funcionar para el SEO y además es más 
+  facil de mantener. 
+
+3. ¿Qué ventaja tiene el atributo required en un formulario?
+  Asegura que ese input del fomulario sea requerido antes de enviar, no 
+  puedes enviar el formulario si no has repondido esta parte del formulario.
+
+
+4. ¿Para qué sirve el atributo type="email" en un <input>?
+  Asegura que el input que ingrese el usuario sea una dirección de correo
+  correcta es decir que tenga un texto y una dirección tipo @gmail @hotmail etc etc.
+
+-->
