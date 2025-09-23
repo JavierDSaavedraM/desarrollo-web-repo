@@ -1,0 +1,38 @@
+.card {
+  display: block;
+  width: 300px;
+  padding: 20px;
+  border: 2px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: gray;
+  margin: auto;
+}
+
+.card:hover{
+  background-color: lavender;
+}
+
+.resaltado {
+  display: inline;
+  color: red;
+  font-weight: bold;
+  border-bottom: dotted;
+}
+
+ul li:first-child{
+  color: blue;
+}
+
+ul li:hover{
+  background-color: yellow;
+}
+
+.extra-info{
+  display: none;
+}
+
+
+input[type="checkbox"]:checked ~ .extra-info{
+  display: block;
+}
