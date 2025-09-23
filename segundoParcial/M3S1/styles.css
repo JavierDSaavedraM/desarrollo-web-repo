@@ -1,3 +1,5 @@
+/* Primero quise empezar con el fondo y los bloques que forman el contenido, siendo las secciones de los encabezados, main, header, article y footer*/
+
 body{
   margin:0; 
   font-family: Arial, sans-serif;
@@ -32,9 +34,12 @@ main {
   padding:16px;
 }
 
+/* Al ver ejemplos en W3Schools también note que puedes poner varias id o clases con una coma para que tengan los mismo */
 #home, #contacto{
   margin-bottom:24px;
 }
+
+/* Esta forma la vi que la utilizaban en W3Schools para utilizar un elemento dentro de una clase o contenedor. */
 
 #home > p {
   color: #555;
@@ -63,13 +68,16 @@ article{
   padding:12px;
 }
 
+/* Al igual que al inicio copie esta estructura de unos ejemplos de W3Schools para poder seleccionar elementos */
 
 article > p{
   color:#666;
   margin:0 0 12px 0;
 }
 
-article > span{
+/* En ves de utilizar la tecnica anterior de los elementos dentro de un contenido, creo que es mejor darle el id a los elementos que sean de precio para poder poner mas elementos en el futuro*/
+
+#price {
   display:inline-block;
   background:#ffeeba;
   color:#664d03;
