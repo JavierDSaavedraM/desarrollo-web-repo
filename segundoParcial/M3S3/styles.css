@@ -45,20 +45,20 @@ header {
   margin: 20px;
 }
 
-.article-footer::after{
+.clearfix::after{
   content: "";
   display: table;
   clear: both;
   visibility: hidden;
 }
 
-.article-footer{
-  margin-right: 20px;
-}
-
 .main-article {
   background-color: #e9ecef;
   padding: 50px;
+}
+
+.article-footer  > p{
+  font-style: italic;
 }
 
 .page-footer {
