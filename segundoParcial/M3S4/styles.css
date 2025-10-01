@@ -47,6 +47,10 @@ button:hover {
 }
 
 .pricing-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 1rem;
   width: 100%;
   height: 300px;
   margin: 10px;
@@ -54,7 +58,12 @@ button:hover {
 }
 
 .pricing-card {
-
+  flex: 0 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
