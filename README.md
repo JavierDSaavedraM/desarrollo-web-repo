@@ -8,10 +8,9 @@ Matricula: 624198 \
 El repositorio esta acomodado en parciales y en actividades
 
 . \
-├─ Primer Parcial (Relacion a HTML) \
+├─ Primer Parcial (Bases de GIt y HTML) \
 │ └─── ...\
-│ \
-├─ Segundo Parcial \
+├─ Segundo Parcial (CSS)\
 │ ├─M3S1 (Primera Actividad CSS)\
 │ ├─M3S2 (Box Modelo de los y propiedades)\
 │ ├─M3S3 (Uso de Float y posicionamiento)\
