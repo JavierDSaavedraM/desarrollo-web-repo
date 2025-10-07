@@ -7,9 +7,9 @@ body {
   grid-template-rows: 80px 1fr 1fr 1fr 30px;
   grid-template-areas: 
   "header header header"
+  "nav main  button"
   "nav main aside "
-  "nav main aside "
-  "nav main aside " 
+  "nav main img " 
   "footer footer footer" ;
 }
 
@@ -18,8 +18,14 @@ nav{ grid-area: nav; background: #74B3CE; }
 aside{ grid-area: aside; background: #d8f793; }
 main{ grid-area: main; background: #F7EBEC; }
 footer{ grid-area: footer; background: #DB7F67; }
+img{display: none; grid-area: img; }
+button{grid-area: button; background: red; color: white;}
 
-header, nav, aside, main, footer {
+button:hover~img{
+  display: block;
+}
+
+header, nav, button,aside, main, footer {
   display: flex;
   justify-content: center;
   align-items: center;
