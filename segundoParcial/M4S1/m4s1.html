@@ -100,9 +100,13 @@
       // Async demo
       setTimeout(() => console.log("Mensaje asíncrono tras 1s"), 1000);
     });
-
     // --- Aquí empieza tu código JS 👇 (borra/edita lo que quieras)
-    console.log("Base lista. Escribe tu JS y mira la salida aquí.");
+    /*
+    Nombre: Javier Djorkaef Saavedra Mendiola
+    Matricula: 624198
+    Yo doy mi palabra que he realizado esta actividad con integridad academica
+    */
+      
     const inventario = [
       {
         nombre: "Nintendo Switch 2",
@@ -116,13 +120,14 @@
       },
       {
         nombre: "Televisor 60 pulgadas",
-        precio: 40000,
+        precio: 10000,
         stock: 5
       }
     ];
 
     const mostrarProductos = (inventario) => {
-      console.log("Inventario actual\n");
+      console.log("Inventario actual:\n");
+      console.log("---------------------------------");
       for (let i = 0; i < inventario.length; i++){
         console.log(`Nombre: ${inventario[i].nombre}, Precio: $${inventario[i].precio}, Stock: ${inventario[i].stock} unidades\n`);
         if (inventario[i].stock === 0){
@@ -134,10 +139,13 @@
     }
     mostrarProductos(inventario);
     console.log("---------------------------------");
-    const cacularValorTotal = (inventario) => {
-      
+    const calcularValorTotal = (inventario) => {
+      let valorTotal = 0;
+      inventario.forEach((item) => valorTotal += item.precio * item.stock);
+      return valorTotal;
     }
-    
+    let valorTotalInventario = calcularValorTotal(inventario);
+    console.log(`El valor total del inventario es: $${valorTotalInventario}`);
   </script>
 </body>
 </html>
