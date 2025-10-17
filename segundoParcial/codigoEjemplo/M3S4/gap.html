@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo Flexbox Gap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      color: #333;
+    }
+
+    .box {
+      background: #4CAF50;
+      color: white;
+      padding: 1rem;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    /* Ejemplo 1: gap simple */
+    .container {
+      display: flex;
+      gap: 1rem; /* espacio de 16px entre todos los elementos */
+      margin-bottom: 2rem;
+    }
+
+    /* Ejemplo 2: gap avanzado */
+    .advanced-container {
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;     /* espaciado vertical */
+     
+      flex-wrap: wrap;   /* permite varias filas si hace falta */
+    }
+
+    .advanced-container .row {
+      display: flex;
+      column-gap: 1rem;  /* espaciado horizontal */
+    }
+  </style>
+</head>
+<body>
+  <h2>Ejemplo con <code>gap</code> simple</h2>
+  <div class="container">
+    <div class="box">Elemento 1</div>
+    <div class="box">Elemento 2</div>
+    <div class="box">Elemento 3</div>
+  </div>
+
+  <h2>Ejemplo con <code>row-gap</code> y <code>column-gap</code></h2>
+  <div class="advanced-container">
+    <div class="row">
+      <div class="box">A1</div>
+      <div class="box">A2</div>
+      <div class="box">A3</div>
+    </div>
+    <div class="row">
+      <div class="box">B1</div>
+      <div class="box">B2</div>
+      <div class="box">B3</div>
+    </div>
+  </div>
+</body>
+</html>

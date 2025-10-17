@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comparativa: Position en CSS</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 40px; }
+    h1 { margin-bottom: 20px; }
+
+    .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .demo {
+      flex: 1 1 300px;
+      border: 2px dashed #bbb;
+      padding: 16px;
+      min-height: 200px;
+      position: relative; /* Para absolute demo */
+    }
+
+    .demo h2 { font-size: 1.2rem; margin-bottom: 10px; }
+
+    .caja {
+      width: 120px; height: 80px; color: #fff; font-weight: 600;
+      display: grid; place-items: center; margin: 6px;
+      border-radius: 8px;
+    }
+
+    .roja { background: #e74c3c; }
+    .azul { background: #3498db; }
+    .verde { background: #2ecc71; }
+
+    /* Position demos */
+    .static { position: static; top: 20px; left: 20px; }   /* top/left no aplican */
+    .relative { position: relative; 
+        top: 0px; 
+        left: 0px;
+         }
+    .absolute { position: absolute; top: 50px; right: 0px; }
+    .fixed { position: fixed; bottom: 20px; right: 20px; }
+    .sticky { position: sticky; top: 0; }
+
+    .scrollbox {
+      height: 200px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+    }
+
+    .relleno {
+      height: 400px;
+      background: linear-gradient(white, #eee);
+    }
+
+    .inline{
+        display:inline-block;
+        
+    }
+  </style>
+</head>
+<body>
+  <h1>Comparativa de Position en CSS</h1>
+
+  <div class="contenedor">
+    <!-- Static -->
+    <div class="demo">
+      <h2>static (por defecto)</h2>
+      <div class="caja azul static">Static</div>
+      <div class="caja verde">Caja normal</div>
+    </div>
+
+    <!-- Relative -->
+    <div class="demo">
+     <!--  <h2>relative</h2> -->
+      <div class="caja azul relative">Relative</div>
+      <div class="caja verde">Caja normal</div>
+    </div>
+
+    <!-- Absolute -->
+    <div class="demo">
+      <h2>absolute</h2>
+      <div class="caja roja relative">Contenedor</div>
+      <div class="caja azul absolute">Absolute</div>
+    </div>
+
+    <!-- Fixed -->
+    <div class="demo">
+      <h2>fixed (al viewport)</h2>
+      <p>Desplázate la página ↓ para ver cómo la caja azul queda fija.</p>
+      <div class="caja azul fixed">Fixed</div>
+      <div class="relleno"></div>
+    </div>
+
+    <!-- Sticky -->
+    <div class="">
+      <h2>sticky</h2>
+      <div class="">
+        <div class="caja roja"></div>
+
+        <div class="caja azul  sticky">Sticky</div>
+        <div class="inline">
+        <div class="caja roja "></div>
+         <div class="caja roja "></div>
+         <div class="caja roja "></div>
+         <div class="caja roja "></div>
+         <div class="caja roja "></div>
+         <div class="caja roja "></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

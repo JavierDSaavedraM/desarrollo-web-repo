@@ -1,0 +1,25 @@
+/* Selector de elemento */
+p {
+  color: blue;
+  font-family: Arial, sans-serif;
+}
+
+/* Selector de clase */
+.destacado {
+  color: red;
+  font-weight: bold;
+}
+
+.caja {
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+  background-color: #f0f0f0;
+}
+
+/* Selector de ID */
+#titulo {
+  font-size: 28px;
+  text-align: center;
+  color: green;
+}

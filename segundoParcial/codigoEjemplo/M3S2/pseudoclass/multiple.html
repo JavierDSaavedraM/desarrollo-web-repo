@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pseudo-clases comunes</title>
+<style>
+  /* Botón normal */
+  button {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  button:hover { background: #033e06; 
+        cursor:pointer;
+}    /* hover */
+  button:active { 
+    background: #7d2e2e; 
+    transform:scale(0.9);
+}   /* active */
+    
+    button:disabled { 
+    background: gray; 
+    cursor:not-allowed;
+    
+}    /* disabled */
+
+  /* Campo de texto */
+  input[type="text"] {
+    padding: 8px;
+    border: 2px solid #000000;
+    border-radius: 4px;
+  }
+  input[type="text"]:focus { 
+    border-color: #ff0000; 
+    outline: none;
+    /* quita el resaltado extra */
+  } /* focus */
+
+  /* Lista con first-child y nth-child */
+  ul li:first-child { color: red; font-weight: bold; }   /* primer hijo */
+  ul li:nth-child(3) { color: blue; }      
+  /* tercer hijo */
+
+  /* Checkbox checked */
+  input[type="checkbox"]:checked + label {
+    color: green;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+  <h2>Botones</h2>
+  <button>Normal</button>
+  <button disabled>Deshabilitado</button>
+
+  <h2>Campo de texto</h2>
+  <input type="text" placeholder="Escribe aquí">
+
+  <h2>Lista</h2>
+  <ul>
+    <li>Elemento 1 (first-child)</li>
+    <li>Elemento 2 (nth-child)</li>
+    <li>Elemento 3</li>
+  </ul>
+
+  <h2>Checkbox</h2>
+  <input type="checkbox" id="chk">
+  <label for="chk">Marcado = verde</label>
+</body>
+</html>

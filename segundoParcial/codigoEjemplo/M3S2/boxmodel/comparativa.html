@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Comparativo Box Model</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    .contenedor {
+      background: lightgray;
+      padding: 10px;
+      margin-bottom: 40px;
+    }
+
+    .caja {
+      width: 200px;
+      background: lightblue;
+    }
+
+    /* Ejemplo con MARGIN */
+    .con-margin .caja {
+      margin: 30px; /* espacio externo */
+    }
+
+    /* Ejemplo con PADDING */
+    .con-padding .caja {
+      padding: 30px; /* espacio interno */
+    }
+
+    /* Ejemplo con BORDER */
+    .con-border .caja {
+      border: 10px solid blue; /* borde alrededor */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Comparativo: Margin, Padding y Border</h1>
+
+  <div class="contenedor con-margin">
+    <h2>Margin</h2>
+    <div class="caja">La caja se separa de su contenedor.</div>
+  </div>
+
+  <div class="contenedor con-padding">
+    <h2>Padding</h2>
+    <div class="caja">El texto se separa de los bordes internos de la caja.</div>
+  </div>
+
+  <div class="contenedor con-border">
+    <h2>Border</h2>
+    <div class="caja">La caja tiene un borde visible alrededor.</div>
+  </div>
+
+</body>
+</html>

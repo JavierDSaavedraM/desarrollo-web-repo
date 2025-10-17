@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ejemplo simple de float</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.5; margin: 40px; }
+
+    .caja {
+      width: 120px; height: 520px;
+      background: #e74c3c; color: #fff; font-weight: bold;
+      left: 30px;
+      top: 30px;
+      right: 10px;
+      bottom: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 10px;
+      float: right; /* 👉 aquí está la clave */
+    }
+
+    .texto {
+      background: #f9f9f9;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .clear {
+      clear: right; /* para forzar que lo siguiente no se suba junto a los floats */
+    }
+
+    .texto::after{
+        content: "";
+        display: table;
+        clear: both;
+        visibility: hidden;
+    }
+
+
+  </style>
+</head>
+<body>
+  <h1>Ejemplo de float</h1>
+
+  <div class="caja">Caja</div>
+
+  <div class="texto">
+    <p>
+      Esta es una caja flotada con <code>float: left</code>. El texto se ajusta alrededor de la caja.
+      Así puedes crear diseños donde imágenes o bloques queden a un lado y el texto fluya a su alrededor.
+    </p>
+    <p class="none">
+      Cuando termina el contenido, la caja flotante sigue ocupando el lado izquierdo hasta que se "limpia"
+      con <code>clear</code>.
+    </p>
+  </div>
+
+  <div class="clear"></div>
+  <p>
+    Este párrafo está debajo de la caja flotante, gracias al uso de <code>clear: both</code>.
+  </p>
+</body>
+</html>

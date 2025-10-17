@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo Flexbox</title>
+  <style>
+    /* Contenedor Flex (Elemento Padre) */
+    .contenedor {
+      display: flex;               /* Activa Flexbox */
+      flex-direction: row;         
+      /* Eje principal → horizontal (row) */
+       /* Eje principal → vertical (column) */
+      justify-content:space-around;     /* Alinea hijos en el eje principal */
+      align-items: flex-start;         /* Alinea hijos en el eje transversal */
+      height: 300px;               /* Para que se vea claro el alineado */
+      background-color: #f0f0f0;
+      border: 2px solid #333;
+      
+      /* gap: 10px; */
+    }
+
+    /* Elementos Flex (Hijos) */
+    .item {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      margin: 0px;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Ejemplo de Flexbox</h2>
+  <div class="contenedor">
+    <div class="item">Elemento 1</div>
+    <div class="item">Elemento 2</div>
+    <div class="item">Elemento 3</div>
+  </div>
+</body>
+</html>

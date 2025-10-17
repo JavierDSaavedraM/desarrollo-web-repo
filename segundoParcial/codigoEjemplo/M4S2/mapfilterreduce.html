@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EJEMPLOS MAP FILTER REDUCE</title>
+  <style>
+    :root { --bg:#0f172a; --panel:#111827; --ink:#e5e7eb; --muted:#94a3b8; --ok:#22c55e; --warn:#fbbf24; --err:#ef4444; --info:#38bdf8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--ink); }
+    header { padding: 16px 20px; border-bottom: 1px solid #1f2937; }
+    h1 { margin: 0 0 6px; font-size: 18px; }
+    .muted { color: var(--muted); font-size: 13px; }
+    .toolbar { display:flex; gap:8px; padding: 10px 20px; border-bottom: 1px solid #1f2937;}
+    button { background:#0b1220; color:var(--ink); border:1px solid #334155; padding:8px 12px; border-radius:10px; cursor:pointer; }
+    button:hover { background:#111826; }
+    #console {
+      padding: 14px 20px; min-height: 40vh; max-height: 70vh; overflow:auto;
+      background: var(--panel); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .row { display:flex; gap:10px; align-items: flex-start; white-space: pre-wrap; word-break: break-word; margin: 6px 0; }
+    .tag { padding:2px 8px; border-radius:999px; font-size:12px; border:1px solid #334155; color:var(--muted); flex: none; }
+    .log .tag{ color:var(--ok); border-color:#14532d; }
+    .info .tag{ color:var(--info); border-color:#0b3b4d; }
+    .warn .tag{ color:var(--warn); border-color:#7c5c0a; }
+    .error .tag{ color:var(--err); border-color:#7f1d1d; }
+    .payload { flex:1; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Consola en el DOM</h1>
+    <div class="muted">Todo lo que envíes a <code>console.log/info/warn/error</code> aparece aquí abajo.</div>
+  </header>
+
+  <div class="toolbar">
+    <button id="btn-clear">Limpiar</button>
+    <button id="btn-demo">Demo rápida</button>
+  </div>
+
+  <main id="console" aria-live="polite" aria-label="Salida de consola"></main>
+
+  <script>
+    // --- Utilidad para formatear valores como texto legible
+    function formatValue(v) {
+      const type = Object.prototype.toString.call(v);
+      if (v instanceof Error) return v.stack || (v.name + ": " + v.message);
+      if (typeof v === "string") return v;
+      try { return JSON.stringify(v, (k, val) => (val === undefined ? "undefined" : val), 2); }
+      catch { return String(v); }
+    }
+
+    // --- Escribe una fila en el contenedor
+    const $out = document.getElementById("console");
+    function write(kind, args) {
+      const row = document.createElement("div");
+      row.className = `row ${kind}`;
+      const tag = document.createElement("span");
+      tag.className = "tag";
+      tag.textContent = kind.toUpperCase();
+      const payload = document.createElement("div");
+      payload.className = "payload";
+      payload.textContent = args.map(formatValue).join(" ");
+      row.append(tag, payload);
+      $out.appendChild(row);
+      // Auto-scroll
+      $out.scrollTop = $out.scrollHeight;
+    }
+
+    // --- Parchear métodos de consola para duplicar salida al DOM
+    (function patchConsole(){
+      const original = {
+        log: console.log.bind(console),
+        info: console.info.bind(console),
+        warn: console.warn.bind(console),
+        error: console.error.bind(console),
+        clear: console.clear.bind(console),
+      };
+      console.log = (...a) => { write("log", a); original.log(...a); };
+      console.info = (...a) => { write("info", a); original.info(...a); };
+      console.warn = (...a) => { write("warn", a); original.warn(...a); };
+      console.error = (...a) => { write("error", a); original.error(...a); };
+      console.clear = () => { $out.innerHTML = ""; original.clear(); };
+      // Capturar errores no controlados
+      window.addEventListener("error", (ev) => {
+        write("error", [ev.message + " @ " + ev.filename + ":" + ev.lineno + ":" + ev.colno]);
+      });
+      window.addEventListener("unhandledrejection", (ev) => {
+        write("error", ["Unhandled promise rejection:", ev.reason]);
+      });
+    })();
+
+    // --- Controles
+    document.getElementById("btn-clear").addEventListener("click", () => console.clear());
+    document.getElementById("btn-demo").addEventListener("click", () => {
+      console.log("Hola 👋 desde console.log");
+      console.info({ usuario: "Jorge", rol: "profesor", activos: true });
+      console.warn("Advertencia de ejemplo", [1,2,3]);
+      console.error(new Error("Error de ejemplo"));
+      // Async demo
+      setTimeout(() => console.log("Mensaje asíncrono tras 1s"), 1000);
+    });
+
+    // --- Aquí empieza tu código JS 👇 (borra/edita lo que quieras)
+    console.log("EJEMPLOS MAP FILTER REDUCE");
+
+    //EJEMPLO 1 MAP
+     console.log("EJEMPLO 1 MAP");
+   
+    const numeros = [1, 2, 3, 4, 5];
+
+    const duplicados = numeros.map(numero => numero * 2);
+
+    console.log(duplicados); // Resultado: [2, 4, 6, 8, 10]
+    console.log(numeros);    // Resultado: [1, 2, 3, 4, 5] (el original no se modifica)
+  
+     //EJEMPLO 2 MAP
+     console.log("EJEMPLO 2 MAP");
+    const nombres = ['ana', 'luis', 'sofia'];
+
+    const capitalizados = nombres.map(nombre => 
+      nombre.charAt(0).toUpperCase() + nombre.slice(1));
+
+    console.log(capitalizados); // ['Ana', 'Luis', 'Sofia']
+
+    //Filter ejemplo 1 - Mantener pares
+    console.log("Ejemplo 1 Filter - mantener pares")
+const numeros1 = [1, 2, 3, 4, 5, 6];
+const pares = numeros1.filter(n => n % 2 === 0);
+console.log(pares); // [2, 4, 6]
+
+    //Filter ejemplo 2 - palabras cortas
+     console.log("Ejemplo 2 Filter - palabras cortas")
+    const palabras = ['sol', 'montaña', 'mar', 'estrella'];
+    const cortas = palabras.filter(p => p.length <= 3);
+    console.log(cortas); // ['sol', 'mar']
+
+    //FILTER EJEMPLO 3 - Filtrar objetos según una propiedad
+console.log("EJEMPLO 3 - Filtrar objetos según una propiedad")
+        const personas = [
+      { nombre: 'Ana', edad: 25 },
+      { nombre: 'Luis', edad: 17 },
+      { nombre: 'Sofía', edad: 30 },
+      { nombre: 'Pedro', edad: 15 }
+    ];
+
+    const adultos = personas.filter(p => p.edad >= 18);
+
+    console.log(adultos);
+    // [
+    //   { nombre: 'Ana', edad: 25 },
+    //   { nombre: 'Sofía', edad: 30 }
+    // ]
+
+ //REDUCE EJEMPLO 1 - SUMA TOTAL
+console.log("REDUCE EJEMPLO 1 - SUMA TOTAL")
+
+const numerosreduce = [2, 5, 10, 3];
+
+const total = numerosreduce.reduce((acumulador, numero) => acumulador + numero, 0);
+
+console.log(total); // 20
+
+ //REDUCE EJEMPLO 2 - PROMEDIO
+console.log("REDUCE EJEMPLO 2 - PROMEDIO")
+const numerosr = [10, 20, 30, 40];
+
+const promedio = numerosr.reduce((acum, num) => acum + num, 0) / numerosr.length;
+
+console.log(promedio); // 25
+
+//REDUCE EJEMPLO 3 - unir cadenas
+console.log("REDUCE EJEMPLO 3 - unir cadenas")
+const palabrasr = ['Hola', 'mundo', 'desde', 'reduce'];
+
+const frase = palabrasr.reduce((acum, palabra) => acum + ' ' + palabra);
+
+console.log(frase); // "Hola mundo desde reduce"
+
+
+  </script>
+</body>
+</html>

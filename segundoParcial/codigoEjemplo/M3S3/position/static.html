@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ejemplo: position: static</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; margin: 40px; }
+
+    .contenedor {
+    /*position:relative;*/  
+    border: 2px dashed #bbb;
+      padding: 16px;
+      min-height: 160px;
+    }
+
+    .caja {
+      width: 120px; height: 80px; color: #fff; font-weight: 600;
+      display: grid; place-items: center; margin: 8px 0;
+      border-radius: 8px;
+    }
+
+    /* Caja en position: static (por defecto) */
+    .static {
+      position:relative;       
+      /* valor por defecto */
+      background: #3498db;
+      /* Estas propiedades NO tienen efecto con static: */
+      top: 0px; 
+      left: 0px; 
+      right: 0px; 
+      bottom: -50px;
+      width:50%;
+    }
+
+    /* Caja de referencia para ver el flujo normal */
+    .normal {
+      background: #95a5a6;
+    }
+
+    .nota {
+      background: #f8f9fa;
+      border-left: 4px solid #3498db;
+      padding: 10px 12px; margin: 16px 0 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>position: <code>static</code></h1>
+
+  <p class="nota">
+    <strong>Observa:</strong> La caja azul tiene <code>position: static</code> (el valor por defecto).
+    Aunque se le declaran <code>top</code> y <code>left</code>, <em>no</em> se aplican.
+    El elemento permanece en el flujo normal del documento, colocándose uno debajo del otro.
+  </p>
+
+  <div class="contenedor">
+    <div class="caja normal">Referencia (arriba)</div>
+    <div class="caja static">static (sin efecto de top/left)</div>
+    <div class="caja normal">Referencia (abajo)</div>
+  </div>
+
+  <p class="nota">
+    Si cambiases la regla <code>position: static</code> por <code>position: relative</code>,
+    entonces <code>top</code> y <code>left</code> sí desplazarían la caja respecto a su posición original.
+  </p>
+</body>
+</html>

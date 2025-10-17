@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Arrays en HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+        }
+        h1 {
+            color: #38bdf8;
+        }
+        pre {
+            background-color: #1e293b;
+            padding: 10px;
+            border-radius: 10px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Demostración de Arrays en JavaScript</h1>
+    <div id="resultado"></div>
+
+<script>
+    // Función para mostrar texto en el HTML
+    function mostrar(titulo, valor) {
+        const contenedor = document.getElementById("resultado");
+        const bloque = document.createElement("div");
+        bloque.innerHTML = `<h3>${titulo}</h3><pre>${JSON.stringify(valor, null, 2)}</pre>`;
+        contenedor.appendChild(bloque);
+    }
+
+    // 1️ Crear el arreglo inicial
+    const hobbies = ["Leer", "Correr", "Programar"];
+    mostrar("Inicial:", hobbies);
+
+    // 2️ Agregar elementos
+    hobbies.push("Cocinar");  // Agrega al final
+    hobbies.unshift("Viajar"); // Agrega al inicio
+    mostrar("Después de agregar:", hobbies);
+
+    // 3️ Acceder a elementos
+    const primer = hobbies[0];   // "Viajar"
+    const ultimo = hobbies[hobbies.length - 1]; // "Cocinar"
+    mostrar("Primer hobby:", primer);
+    mostrar("Último hobby:", ultimo);
+
+    // 4️ Modificar elementos
+    hobbies[1] = "Nadar"; // Cambia "Leer" por "Nadar"
+    mostrar("Después de modificar:", hobbies);
+
+    // 5️ Eliminar elementos
+    hobbies.pop();   // Elimina el último ("Cocinar")
+    hobbies.shift(); // Elimina el primero ("Viajar")
+    mostrar("Después de eliminar:", hobbies);
+
+    // 6️ Eliminar un elemento específico (por posición)
+    hobbies.splice(1, 1); // Elimina 1 elemento desde el índice 1
+    mostrar("Después de splice:", hobbies);
+
+    // 7️ Recorrer el arreglo con foreach
+    const lista = [];
+hobbies.forEach((hobby, i) => {
+  lista.push(`${i}: ${hobby}`);
+});
+mostrar("Recorriendo hobbies foreach:", lista);
+
+
+//recorrer con map
+
+const lista2 = hobbies.map((hobby, i) => `${i}: ${hobby}`);
+mostrar("Recorriendo hobbies map:", lista);
+
+</script>
+</body>
+</html>

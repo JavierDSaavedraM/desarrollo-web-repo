@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo Flex-Wrap</title>
+  <style>
+    .contenedor {
+      display: flex;
+      /* justify-content:  center; */
+      /* flex-direction: row; */
+      /*wrap, nowrap, wrap-reverse*/
+      flex-wrap: wrap-reverse;   /* Hace que los elementos se acomoden en varias líneas */
+      gap: 10px;         /* Espacio entre los elementos */
+      border: 2px solid #333;
+      padding: 10px;
+      background-color: #f0f0f0;
+      /* overflow: scroll; */
+    }
+
+    .item {
+      flex: 1 1 200px;   /* Cada hijo mide 150px de ancho */
+      height: 100px;
+      background-color: #4CAF50;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Ejemplo de Flexbox con <code>flex-wrap</code></h2>
+
+  <div class="contenedor">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+  </div>
+
+</body>
+</html>

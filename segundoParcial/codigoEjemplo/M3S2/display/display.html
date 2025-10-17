@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo display</title>
+  <style>
+    .caja {
+      background: lightblue;
+      border: 2px solid blue;
+      padding: 10px;
+      margin: 5px;
+    }
+    /* Ocupa todo el ancho */
+    .block {
+      display: block;     
+    }
+    /* Solo ocupa lo necesario */
+    .inline {
+      display: inline;     
+    }
+    /* Se alinea como inline pero permite width/height */
+    .inline-block {
+      display: inline-block; 
+      width: 100px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Comparación: block vs inline vs inline-block</h1>
+
+  <h2>Block</h2>
+  <div class="caja block">Caja 1</div>
+  <div class="caja block">Caja 2</div>
+  <div class="caja block">Caja 3</div>
+
+  <h2>Inline</h2>
+  <div class="caja inline">Caja 1</div>
+  <div class="caja inline">Caja 2</div>
+  <div class="caja inline">Caja 3</div>
+
+  <h2>Inline-block</h2>
+  <div class="caja inline-block">Caja 1</div>
+  <div class="caja inline-block">Caja 2</div>
+  <div class="caja inline-block">Caja 3</div>
+</body>
+</html>

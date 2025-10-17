@@ -1,0 +1,5 @@
+/* Estilo aplicado a todos los párrafos */
+p {
+  color: blue;
+  font-family: Arial, sans-serif;
+}

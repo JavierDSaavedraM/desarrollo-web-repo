@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navegación responsiva</title>
+  <style>
+    /* Mobile-first: estilos base */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f8f8;
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: column; /* En columna en móviles */
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .item-nav {
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.3s;
+    }
+
+    .item-nav:hover {
+      background: #f0f0f0;
+    }
+
+    /* Ajustar para tablets y más */
+    @media screen and (min-width: 768px) {
+      .nav {
+        flex-direction: row; /* Cambia a horizontal */
+        justify-content: space-between; /* Espaciado entre elementos */
+      }
+
+      .item-nav {
+        border: none;
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="#" class="item-nav">Inicio</a>
+    <a href="#" class="item-nav">Servicios</a>
+    <a href="#" class="item-nav">Proyectos</a>
+    <a href="#" class="item-nav">Contacto</a>
+  </nav>
+
+</body>
+</html>

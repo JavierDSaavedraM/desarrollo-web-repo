@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Cards Example</title>
+  <style>
+    body {
+      font-family: system-ui;
+      text-align: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+      .card {
+      flex: 1 1 100; /* grow, shrink, basis */
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      min-height: 200px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="card">
+      <h3>Card 1</h3>
+      <p>This is a simple card example.</p>
+    </div>
+    <div class="card">
+      <h3>Card 2</h3>
+      <p>Cards automatically space out using <code>gap</code>.</p>
+    </div>
+    <div class="card">
+      <h3>Card 3</h3>
+      <p>They also wrap neatly on smaller screens.on smaller screens.on smaller screens.</p>
+    </div>
+    <div class="card h3">
+      <h3>Card 4</h3>
+      <p>Flexbox + gap = clean layouts without margin hacks.</p>
+    </div>
+  </div>
+</body>
+</html>

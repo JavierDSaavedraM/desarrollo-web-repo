@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Grid Example</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      grid-template-rows: 60px 1fr 1fr 60px;
+      grid-template-areas:
+        "header header"
+        "aside  main"
+        "nav    main"
+        "footer footer";
+      gap: 5px;
+    }
+
+    header { grid-area: header; background: skyblue; }
+    aside  { grid-area: aside;  background: orange; }
+    nav    { grid-area: nav;    background: lightgreen; }
+    main   { grid-area: main;   background: tomato; }
+    footer { grid-area: footer; background: plum; }
+
+    
+    header, aside, nav, main, footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>Header</header>
+  <aside>Aside</aside>
+  <nav>Nav</nav>
+  <main>Main</main>
+  <footer>Footer</footer>
+</body>
+</html>
